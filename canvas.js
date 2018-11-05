@@ -7,16 +7,16 @@ var c = canvas.getContext('2d');
 
 canvas.addEventListener("touchstart", function(e) {
     var touch = e.touches[0];
-    console.log(touch.clientX,touch.clientY);
+    // console.log(touch.clientX,touch.clientY);
     touchCircle.update(touch,"start");
 
 });
 canvas.addEventListener("touchend", function (e) {
-    touchCircle.radius = touchCircle.radius*(1/1.2);
+    touchCircle.radius = 200;
   });
   canvas.addEventListener("touchmove", function (e) {
     var touch = e.touches[0];
-    console.log(touch.clientX,touch.clientY);
+    // console.log(touch.clientX,touch.clientY);
     touchCircle.update(touch,"move");
   });
 
@@ -59,7 +59,7 @@ function Circle(x,y,radius,color) {
         if(Math.abs(touch.clientX - this.x)<150){
             switch(status) {
                 case "start":
-                    console.log("got me!");
+                    // console.log("got me!");
                     touchCircle.radius = touchCircle.radius*1.2;
                     break;
                 case "move":
